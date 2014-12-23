@@ -1,0 +1,24 @@
+﻿Module Common
+{
+	ShortString Principal.Email;
+	
+	Implements Principal.'Rhetos.AspNetFormsAuth.SimpleSPRTEmail.IPrincipalWithEmail, Rhetos.AspNetFormsAuth.SimpleSPRTEmail'
+	{
+		RegisteredImplementation;
+	}
+}
+
+Module SimpleSPRTEmail
+{
+	Entity EmailFormat
+	{
+		LongString Subject;
+		LongString Body; // Use {Token} tag in the body string to place the password reset token.
+		Bool IsBodyHtml;
+		
+		Implements 'Rhetos.AspNetFormsAuth.SimpleSPRTEmail.IEmailFormat, Rhetos.AspNetFormsAuth.SimpleSPRTEmail'
+		{
+			RegisteredImplementation;
+		}
+	}
+}
