@@ -14,7 +14,7 @@ SimpleSPRTEmail package adds the **Email** property (ShortString) to the **Commo
 
 ### Connecting to an SMTP email server
 
-SimpleSPRTEmail uses **System.Net.Mail** classes from .NET Framwork for sending an email to an SMTP server.
+SimpleSPRTEmail uses `System.Net.Mail` classes from .NET Framwork for sending an email to an SMTP server.
 
 Use [&lt;mailSettings&gt; element](http://msdn.microsoft.com/en-us/library/w355a94k%28v=vs.100%29.aspx) in `web.config` to configure the email sending options. An example: 
 
