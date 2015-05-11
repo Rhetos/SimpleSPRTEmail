@@ -49,7 +49,7 @@ namespace Rhetos.AspNetFormsAuth.SimpleSPRTEmail
 
         private IEmailFormat ReadEmailFormat()
         {
-            var mailFormats = _emailFormatRepository.Read();
+            var mailFormats = _emailFormatRepository.Load();
 
             if (mailFormats.Count() == 0)
                 throw new FrameworkException("There is no email format set in " + _emailFormatRepository.EntityName + ".");
