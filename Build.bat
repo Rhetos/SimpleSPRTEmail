@@ -1,20 +1,15 @@
 @REM HINT: SET SECOND ARGUMENT TO /NOPAUSE WHEN AUTOMATING THE BUILD.
+@SETLOCAL
 
 @SET Config=%1%
 @IF [%1] == [] SET Config=Debug
 
-@IF DEFINED VisualStudioVersion GOTO SkipVcvarsall
-@SET VSTOOLS=
-@IF "%VS100COMNTOOLS%" NEQ "" SET VSTOOLS=%VS100COMNTOOLS%
-@IF "%VS110COMNTOOLS%" NEQ "" SET VSTOOLS=%VS110COMNTOOLS%
-@IF "%VS120COMNTOOLS%" NEQ "" SET VSTOOLS=%VS120COMNTOOLS%
-CALL "%VSTOOLS%\..\..\VC\vcvarsall.bat" x86 || GOTO Error0
+IF NOT DEFINED VisualStudioVersion CALL "%VS140COMNTOOLS%VsDevCmd.bat" || ECHO ERROR: Cannot find Visual Studio 2015, missing VS140COMNTOOLS variable. && GOTO Error0
 @ECHO ON
-:SkipVcvarsall
 
-CALL "%~dp0Packages\Rhetos\UpdateRhetosDlls.bat" /nopause || GOTO Error0
-IF EXIST Build.log DEL Build.log || GOTO Error0
-DevEnv.com "%~dp0SimpleSPRTEmail.sln" /rebuild %Config% /out Build.log || TYPE Build.log && GOTO Error0
+NuGet restore || GOTO Error0
+MSBuild /target:rebuild /p:Configuration=%Config% /verbosity:minimal /fileLogger || GOTO Error0
+NuGet.exe pack -o .. || GOTO Error0
 
 @REM ================================================
 

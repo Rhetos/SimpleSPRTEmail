@@ -1,12 +1,10 @@
-SimpleSPRTEmail
-===============
+# SimpleSPRTEmail
 
 SimpleSPRTEmail is a DSL package (a plugin module) for [Rhetos development platform](https://github.com/Rhetos/Rhetos).
 
 It allows sending simple emails on "Send password reset token" authentication service method at [AspNetFormsAuth](https://github.com/Rhetos/Rhetos/tree/master/AspNetFormsAuth).
 
-Features
---------
+## Features
 
 ### Entering user's email address
 
@@ -41,45 +39,7 @@ The email body may contain the following special tokens:
 * `{UserName}` -> will be replaced with the username.
 * `{Token}` -> will be replaced with the generated password reset token.
 
-Deployment
-----------
-
-### Prerequisites
-
-* *AspNetFormsAuth* and *CommonConcepts* packages must be deployed along with *SimpleSPRTEmail*.
-
-Building binaries from source
------------------------------
-
-### Prerequisites
-
-* Build utilities in this project are based on relative path to Rhetos repository.
-  [Rhetos source](https://github.com/Rhetos/Rhetos) should be downloaded to a folder
-  with relative path `..\..\Rhetos` and compiled (use `Build.bat`),
-  before this package's `Build.bat` script is executed.
-
-Sample folder structure:
- 
-	\ROOT
-		\Rhetos
-		\RhetosPackages
-			\SimpleSPRTEmail
-
-### Build
-
-1. Build this package by executing `Build.bat`. The script will pause in case of an error.
-   * The script automatically copies all needed dll files from Rhetos folder and builds the SimpleSPRTEmail.sln using Visual Studio (command-line).
-
-### Create installation package
-
-1. Set the new version number in `ChangeVersion.bat` and execute it.
-2. Execute `Build.bat`.
-3. Execute `CreatePackage.bat`. It creates installation package (.zip) in parent directory of SimpleSPRTEmail.
-
-
-<a id="Troubleshooting"></a>
-Troubleshooting
----------------
+## Troubleshooting
 
 In case of a server error, additional information on the error may be found in the Rhetos server log (`RhetosServer.log` file, by default).
 If needed, more verbose logging of the authentication service may be switched on by adding
