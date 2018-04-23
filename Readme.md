@@ -15,17 +15,19 @@ SimpleSPRTEmail uses `System.Net.Mail` classes from .NET Framework for sending a
 
 Use [&lt;mailSettings&gt; element](http://msdn.microsoft.com/en-us/library/w355a94k%28v=vs.100%29.aspx) in `web.config` to configure the email sending options. An example:
 
-    <configuration>
-      ...
+```XML
+<configuration>
+  ...
 
-        <system.net>
-          <mailSettings>
-            <smtp from="test@foo.com">
-              <network host="smtp.example.com" port="25" userName="username1" password="secret1" defaultCredentials="true" />
-            </smtp>
-          </mailSettings>
-        </system.net>
-    </configuration>
+    <system.net>
+      <mailSettings>
+        <smtp from="test@foo.com">
+          <network host="smtp.example.com" port="25" userName="username1" password="secret1" defaultCredentials="true" />
+        </smtp>
+      </mailSettings>
+    </system.net>
+</configuration>
+```
 
 ### Email content and format
 
