@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AdminSetup">
-      <HintPath>..\..\packages\Rhetos.AspNetFormsAuth.2.0.0-dev\lib\net451\AdminSetup.exe</HintPath>
+      <HintPath>..\..\packages\Rhetos.AspNetFormsAuth.2.1.0\lib\net451\AdminSetup.exe</HintPath>
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Autofac">
@@ -58,7 +58,7 @@
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="InitAspNetDatabase">
-      <HintPath>..\..\packages\Rhetos.AspNetFormsAuth.2.0.0-dev\lib\net451\InitAspNetDatabase.exe</HintPath>
+      <HintPath>..\..\packages\Rhetos.AspNetFormsAuth.2.1.0\lib\net451\InitAspNetDatabase.exe</HintPath>
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Ionic.Zip">
@@ -91,11 +91,11 @@
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Rhetos.AspNetFormsAuth">
-      <HintPath>..\..\packages\Rhetos.AspNetFormsAuth.2.0.0-dev\lib\net451\Rhetos.AspNetFormsAuth.dll</HintPath>
+      <HintPath>..\..\packages\Rhetos.AspNetFormsAuth.2.1.0\lib\net451\Rhetos.AspNetFormsAuth.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Rhetos.AspNetFormsAuth.Interfaces">
-      <HintPath>..\..\packages\Rhetos.AspNetFormsAuth.2.0.0-dev\lib\net451\Rhetos.AspNetFormsAuth.Interfaces.dll</HintPath>
+      <HintPath>..\..\packages\Rhetos.AspNetFormsAuth.2.1.0\lib\net451\Rhetos.AspNetFormsAuth.Interfaces.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Rhetos.Compiler">
@@ -231,11 +231,11 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web.Helpers">
-      <HintPath>..\..\packages\Rhetos.AspNetFormsAuth.2.0.0-dev\lib\net451\System.Web.Helpers.dll</HintPath>
+      <HintPath>..\..\packages\Rhetos.AspNetFormsAuth.2.1.0\lib\net451\System.Web.Helpers.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="System.Web.WebPages">
-      <HintPath>..\..\packages\Rhetos.AspNetFormsAuth.2.0.0-dev\lib\net451\System.Web.WebPages.dll</HintPath>
+      <HintPath>..\..\packages\Rhetos.AspNetFormsAuth.2.1.0\lib\net451\System.Web.WebPages.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="System.Xml.Linq" />
@@ -244,11 +244,11 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="WebMatrix.Data">
-      <HintPath>..\..\packages\Rhetos.AspNetFormsAuth.2.0.0-dev\lib\net451\WebMatrix.Data.dll</HintPath>
+      <HintPath>..\..\packages\Rhetos.AspNetFormsAuth.2.1.0\lib\net451\WebMatrix.Data.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="WebMatrix.WebData">
-      <HintPath>..\..\packages\Rhetos.AspNetFormsAuth.2.0.0-dev\lib\net451\WebMatrix.WebData.dll</HintPath>
+      <HintPath>..\..\packages\Rhetos.AspNetFormsAuth.2.1.0\lib\net451\WebMatrix.WebData.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
     </Reference>
   </ItemGroup>
