@@ -2,12 +2,12 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>Rhetos.SimpleSPRTEmail</id>
-    <version>2.0.1-alpha001</version>
+    <version>2.0.1-dev</version>
     <authors>Omega software</authors>
     <owners>Omega software</owners>
     <licenseUrl>http://opensource.org/licenses/AGPL-3.0</licenseUrl>
     <projectUrl>https://github.com/rhetos/rhetos</projectUrl>
-    <description>SimpleSPRTEmail is a DSL package (a plugin module) for Rhetos development platform.
+    <description>SimpleSPRTEmail is a plugin package for Rhetos development platform.
         It allows sending simple emails on "Send password reset token" authentication service method at AspNetFormsAuth.</description>
     <copyright>Copyright Omega software 2015</copyright>
     <tags>Rhetos plugin</tags>
