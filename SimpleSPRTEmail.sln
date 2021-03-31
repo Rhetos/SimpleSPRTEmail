@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rhetos.AspNetFormsAuth.SimpleSPRTEmail", "Plugins\Rhetos.AspNetFormsAuth.SimpleSPRTEmail\Rhetos.AspNetFormsAuth.SimpleSPRTEmail.csproj", "{9F01763E-BB1C-4D9B-8086-5279AA5456B2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rhetos.AspNetFormsAuth.SimpleSPRTEmail", "src\Rhetos.AspNetFormsAuth.SimpleSPRTEmail\Rhetos.AspNetFormsAuth.SimpleSPRTEmail.csproj", "{9F01763E-BB1C-4D9B-8086-5279AA5456B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
