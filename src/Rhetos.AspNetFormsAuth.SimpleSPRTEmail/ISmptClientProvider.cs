@@ -17,13 +17,14 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-using Rhetos.Dom.DefaultConcepts;
+using System.Net.Mail;
 
 namespace Rhetos.AspNetFormsAuth.SimpleSPRTEmail
 {
-    public interface IPrincipalWithEmail : IEntity
+    public interface ISmptClientProvider
     {
-        string Name { get; set; }
-        string Email { get; set; }
+        SmtpClient GetSmtpClient();
+
+        MailMessage GetMailMessage();
     }
 }

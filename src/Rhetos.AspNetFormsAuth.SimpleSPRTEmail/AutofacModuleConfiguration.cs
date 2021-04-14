@@ -17,13 +17,21 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-using Rhetos.Dom.DefaultConcepts;
+using Autofac;
+using Rhetos.Utilities;
+using System.ComponentModel.Composition;
 
 namespace Rhetos.AspNetFormsAuth.SimpleSPRTEmail
 {
-    public interface IPrincipalWithEmail : IEntity
+    [Export(typeof(Module))]
+    public class AutofacModuleConfiguration : Module
     {
-        string Name { get; set; }
-        string Email { get; set; }
+        protected override void Load(ContainerBuilder builder)
+        {
+            builder.Register(context => context.Resolve<IConfiguration>().GetOptions<SmptOptions>()).SingleInstance().PreserveExistingDefaults();
+            builder.RegisterType<SmptClientProviderFromOptions>().As<ISmptClientProvider>().InstancePerLifetimeScope();
+
+            base.Load(builder);
+        }
     }
 }

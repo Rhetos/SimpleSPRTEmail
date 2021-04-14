@@ -17,13 +17,22 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-using Rhetos.Dom.DefaultConcepts;
 
 namespace Rhetos.AspNetFormsAuth.SimpleSPRTEmail
 {
-    public interface IPrincipalWithEmail : IEntity
+    [Options("SimpleSPRTEMail:Smpt")]
+    public class SmptOptions
     {
-        string Name { get; set; }
-        string Email { get; set; }
+        public string From { get; set; }
+
+        public string Host { get; set; }
+
+        public int Port { get; set; } = 25;
+
+        public bool EnableSsl { get; set; } = false;
+
+        public string UserName { get; set; }
+
+        public string Password { get; set; }
     }
 }

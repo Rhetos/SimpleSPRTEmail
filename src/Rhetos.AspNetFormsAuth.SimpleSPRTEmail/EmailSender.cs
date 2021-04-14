@@ -19,32 +19,33 @@
 
 using Rhetos.Dom.DefaultConcepts;
 using Rhetos.Logging;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Linq;
 using System.Net.Mail;
-using System.Text;
 
 namespace Rhetos.AspNetFormsAuth.SimpleSPRTEmail
 {
     [Export(typeof(ISendPasswordResetToken))]
     public class EmailSender : ISendPasswordResetToken
     {
-        GenericRepository<IPrincipalWithEmail> _principalRepository;
-        GenericRepository<IEmailFormat> _emailFormatRepository;
-        ILogger _logger;
-        SmtpClient _smtp;
+        private readonly GenericRepository<IPrincipalWithEmail> _principalRepository;
+        private readonly GenericRepository<IEmailFormat> _emailFormatRepository;
+        private readonly ILogger _logger;
+        private readonly SmtpClient _smtp;
+        private readonly ISmptClientProvider _smptClientProvider;
 
         public EmailSender(
             GenericRepository<IPrincipalWithEmail> principalRepository,
             GenericRepository<IEmailFormat> emailFormatRepository,
-            ILogProvider logProvider)
+            ILogProvider logProvider,
+            ISmptClientProvider smptClientProvider)
         {
             _principalRepository = principalRepository;
             _emailFormatRepository = emailFormatRepository;
             _logger = logProvider.GetLogger("SimpleSPRTEmail." + GetType().Name);
-            _smtp = new SmtpClient(); // smpt.Host and other parameters are set from the application's config file.
+            _smptClientProvider = smptClientProvider;
+            _smtp = _smptClientProvider.GetSmtpClient();
         }
 
         private IEmailFormat ReadEmailFormat()
@@ -64,7 +65,7 @@ namespace Rhetos.AspNetFormsAuth.SimpleSPRTEmail
         {
             var emailFormat = ReadEmailFormat();
 
-            MailMessage email = new MailMessage(); // email.From is set from the application's config file.
+            var email = _smptClientProvider.GetMailMessage();
             email.Subject = emailFormat.Subject;
             email.Body = emailFormat.Body.Replace("{Token}", passwordResetToken).Replace("{UserName}", userName);
             email.IsBodyHtml = emailFormat.IsBodyHtml == true;

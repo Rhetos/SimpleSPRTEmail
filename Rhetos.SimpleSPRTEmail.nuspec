@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>Rhetos.SimpleSPRTEmail</id>
-    <version>2.0.1-dev</version>
+    <version>5.0.0-dev</version>
     <authors>Omega software</authors>
     <owners>Omega software</owners>
     <licenseUrl>http://opensource.org/licenses/AGPL-3.0</licenseUrl>
@@ -12,14 +12,14 @@
     <copyright>Copyright Omega software 2015</copyright>
     <tags>Rhetos plugin</tags>
     <dependencies>
-      <dependency id="Rhetos.AspNetFormsAuth" version="1.0.0" />
+      <dependency id="Rhetos.AspNetFormsAuth" version="5.0.0-dev" />
     </dependencies>
   </metadata>
   <files>
     <file src="Readme.md" target="" />
     <file src="src\DataMigration\**\*" target="DataMigration" />
     <file src="src\DslScripts\**\*" target="DslScripts" />
-    <file src="src\Rhetos.AspNetFormsAuth.SimpleSPRTEmail\bin\Debug\Rhetos.AspNetFormsAuth.SimpleSPRTEmail.dll" target="lib\net451" />
-    <file src="src\Rhetos.AspNetFormsAuth.SimpleSPRTEmail\bin\Debug\Rhetos.AspNetFormsAuth.SimpleSPRTEmail.pdb" target="lib\net451" />
+    <file src="src\Rhetos.AspNetFormsAuth.SimpleSPRTEmail\bin\Debug\net5.0\Rhetos.AspNetFormsAuth.SimpleSPRTEmail.dll" target="lib\net5.0" />
+    <file src="src\Rhetos.AspNetFormsAuth.SimpleSPRTEmail\bin\Debug\net5.0\Rhetos.AspNetFormsAuth.SimpleSPRTEmail.pdb" target="lib\net5.0" />
   </files>
 </package>
