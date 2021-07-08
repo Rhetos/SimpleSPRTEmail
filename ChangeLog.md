@@ -4,7 +4,8 @@
 
 ### Breaking changes
 
-1. Removed support for configuring the SmptClient through Web.config. Use a json file for configurtion as in the example below
+1. Migrated from .NET Framework to .NET 5 and Rhetos 5.
+2. Removed support for configuring the SmptClient through Web.config. Use a JSON file for configuration as in the example below
     ```json
     {
         "SimpleSPRTEMail": {
