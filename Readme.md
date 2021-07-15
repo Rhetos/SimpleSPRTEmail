@@ -13,7 +13,7 @@ SimpleSPRTEmail package adds the **Email** property (ShortString) to the **Commo
 
 SimpleSPRTEmail uses `System.Net.Mail` classes from .NET Framework for sending an email to an SMTP server.
 
-Use [&lt;mailSettings&gt; element](http://msdn.microsoft.com/en-us/library/w355a94k%28v=vs.100%29.aspx) in `web.config` to configure the email sending options. An example:
+Use [&lt;mailSettings&gt; element](http://msdn.microsoft.com/en-us/library/w355a94k%28v=vs.100%29.aspx) in `App.config` to configure the email sending options. An example:
 
 ```XML
 <configuration>

@@ -23,8 +23,8 @@ namespace Rhetos.AspNetFormsAuth.SimpleSPRTEmail
 {
     public interface ISmptClientProvider
     {
-        SmtpClient GetSmtpClient();
+        SmtpClient CreateSmtpClient();
 
-        MailMessage GetMailMessage();
+        MailMessage CreateMailMessage();
     }
 }

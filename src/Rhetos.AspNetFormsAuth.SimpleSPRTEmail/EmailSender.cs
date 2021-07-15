@@ -45,7 +45,7 @@ namespace Rhetos.AspNetFormsAuth.SimpleSPRTEmail
             _emailFormatRepository = emailFormatRepository;
             _logger = logProvider.GetLogger("SimpleSPRTEmail." + GetType().Name);
             _smptClientProvider = smptClientProvider;
-            _smtp = _smptClientProvider.GetSmtpClient();
+            _smtp = _smptClientProvider.CreateSmtpClient();
         }
 
         private IEmailFormat ReadEmailFormat()
@@ -65,7 +65,7 @@ namespace Rhetos.AspNetFormsAuth.SimpleSPRTEmail
         {
             var emailFormat = ReadEmailFormat();
 
-            var email = _smptClientProvider.GetMailMessage();
+            var email = _smptClientProvider.CreateMailMessage();
             email.Subject = emailFormat.Subject;
             email.Body = emailFormat.Body.Replace("{Token}", passwordResetToken).Replace("{UserName}", userName);
             email.IsBodyHtml = emailFormat.IsBodyHtml == true;

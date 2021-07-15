@@ -17,6 +17,7 @@
   </metadata>
   <files>
     <file src="Readme.md" target="" />
+    <file src="ChangeLog.md" target="" />
     <file src="src\DataMigration\**\*" target="DataMigration" />
     <file src="src\DslScripts\**\*" target="DslScripts" />
     <file src="src\Rhetos.AspNetFormsAuth.SimpleSPRTEmail\bin\Debug\net5.0\Rhetos.AspNetFormsAuth.SimpleSPRTEmail.dll" target="lib\net5.0" />

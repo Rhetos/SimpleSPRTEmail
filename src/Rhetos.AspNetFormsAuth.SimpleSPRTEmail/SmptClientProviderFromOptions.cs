@@ -31,22 +31,24 @@ namespace Rhetos.AspNetFormsAuth.SimpleSPRTEmail
             _smptOptions = smptOptions;
         }
 
-        public MailMessage GetMailMessage()
+        public MailMessage CreateMailMessage()
         {
-            var mailMessage = new MailMessage();
-            mailMessage.From = new MailAddress(_smptOptions.From);
-            return mailMessage;
+            return new MailMessage
+            {
+                From = new MailAddress(_smptOptions.From)
+            };
         }
 
-        public SmtpClient GetSmtpClient()
+        public SmtpClient CreateSmtpClient()
         {
-            var smtpClient = new SmtpClient();
-            smtpClient.Host = _smptOptions.Host;
-            smtpClient.EnableSsl = _smptOptions.EnableSsl;
-            smtpClient.Port = _smptOptions.Port;
-            smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
-            smtpClient.Credentials = new NetworkCredential(_smptOptions.UserName, _smptOptions.Password);
-            return smtpClient;
+            return new SmtpClient
+            {
+                Host = _smptOptions.Host,
+                EnableSsl = _smptOptions.EnableSsl,
+                Port = _smptOptions.Port,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                Credentials = new NetworkCredential(_smptOptions.UserName, _smptOptions.Password)
+            };
         }
     }
 }
