@@ -23,8 +23,8 @@ using System.Net.Mail;
 namespace Rhetos.AspNetFormsAuth.SimpleSPRTEmail
 {
     /// <summary>
-    /// See documentation on <see cref="SmtpClient"/> for description of each property.
-    /// For properties that are not specified in configuration, default SmtpClient will be used.
+    /// See documentation on <see cref="SmtpClient"/> class for description of each property.
+    /// For properties that are not specified in configuration, default SmtpClient settings will be used.
     /// </summary>
     [Options("SimpleSPRTEMail:Smpt")]
     public class SmptOptions

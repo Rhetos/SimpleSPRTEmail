@@ -13,21 +13,30 @@ SimpleSPRTEmail package adds the **Email** property (ShortString) to the **Commo
 
 SimpleSPRTEmail uses `System.Net.Mail` classes from .NET Framework for sending an email to an SMTP server.
 
-Use [&lt;mailSettings&gt; element](http://msdn.microsoft.com/en-us/library/w355a94k%28v=vs.100%29.aspx) in `App.config` to configure the email sending options. An example:
+Specify SMTP configuration in the application's configuration file (for example, in appsettings.json).
+See documentation on SmtpClient class for description of each property.
+For properties that are not specified in configuration, default SmtpClient settings will be used.
 
-```XML
-<configuration>
-  ...
+Example:
 
-    <system.net>
-      <mailSettings>
-        <smtp from="test@foo.com">
-          <network host="smtp.example.com" port="25" userName="username1" password="secret1" defaultCredentials="true" />
-        </smtp>
-      </mailSettings>
-    </system.net>
-</configuration>
+```json
+{
+    "SimpleSPRTEMail": {
+        "Smpt": {
+            "From": "username@gmail.com",
+            "Host": "smtp.gmail.com",
+            "Port": 587,
+            "EnableSsl": true,
+            "UserName": "username",
+            "Password": "pasword",
+            "DefaultCredentials": false,
+            "TargetName": null
+        }
+    }
+}
 ```
+
+For advanced configuration, register a custom implementation of Rhetos.AspNetFormsAuth.SimpleSPRTEmail.ISmptClientProvider.
 
 ### Email content and format
 
