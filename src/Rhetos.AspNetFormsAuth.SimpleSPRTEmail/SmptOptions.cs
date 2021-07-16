@@ -18,8 +18,14 @@
 */
 
 
+using System.Net.Mail;
+
 namespace Rhetos.AspNetFormsAuth.SimpleSPRTEmail
 {
+    /// <summary>
+    /// See documentation on <see cref="SmtpClient"/> for description of each property.
+    /// For properties that are not specified in configuration, default SmtpClient will be used.
+    /// </summary>
     [Options("SimpleSPRTEMail:Smpt")]
     public class SmptOptions
     {
@@ -27,12 +33,19 @@ namespace Rhetos.AspNetFormsAuth.SimpleSPRTEmail
 
         public string Host { get; set; }
 
-        public int Port { get; set; } = 25;
+        public int? Port { get; set; }
 
-        public bool EnableSsl { get; set; } = false;
+        public bool? EnableSsl { get; set; }
 
         public string UserName { get; set; }
 
         public string Password { get; set; }
+
+        public bool? DefaultCredentials { get; set; }
+
+        public string TargetName { get; set; }
+
+        // The "clientDomain" property of SmtpClient is not configurable on .NET Core,
+        // see https://github.com/dotnet/runtime/issues/27765.
     }
 }

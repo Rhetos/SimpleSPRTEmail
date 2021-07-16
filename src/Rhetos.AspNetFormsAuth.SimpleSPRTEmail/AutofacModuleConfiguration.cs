@@ -29,7 +29,7 @@ namespace Rhetos.AspNetFormsAuth.SimpleSPRTEmail
         protected override void Load(ContainerBuilder builder)
         {
             builder.Register(context => context.Resolve<IConfiguration>().GetOptions<SmptOptions>()).SingleInstance().PreserveExistingDefaults();
-            builder.RegisterType<SmptClientProviderFromOptions>().As<ISmptClientProvider>().InstancePerLifetimeScope();
+            builder.RegisterType<SmptClientProviderFromOptions>().As<ISmptClientProvider>().InstancePerLifetimeScope().PreserveExistingDefaults();
 
             base.Load(builder);
         }

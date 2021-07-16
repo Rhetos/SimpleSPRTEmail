@@ -33,22 +33,39 @@ namespace Rhetos.AspNetFormsAuth.SimpleSPRTEmail
 
         public MailMessage CreateMailMessage()
         {
-            return new MailMessage
-            {
-                From = new MailAddress(_smptOptions.From)
-            };
+            var mailMessage = new MailMessage();
+
+            if (_smptOptions.From != null)
+                mailMessage.From = new MailAddress(_smptOptions.From);
+
+            return mailMessage;
         }
 
         public SmtpClient CreateSmtpClient()
         {
-            return new SmtpClient
-            {
-                Host = _smptOptions.Host,
-                EnableSsl = _smptOptions.EnableSsl,
-                Port = _smptOptions.Port,
-                DeliveryMethod = SmtpDeliveryMethod.Network,
-                Credentials = new NetworkCredential(_smptOptions.UserName, _smptOptions.Password)
-            };
+            var smtpClient = new SmtpClient();
+
+            if (_smptOptions.Host != null)
+                smtpClient.Host = _smptOptions.Host;
+
+            if (_smptOptions.EnableSsl != null)
+                smtpClient.EnableSsl = _smptOptions.EnableSsl.Value;
+
+            if (_smptOptions.Port != null)
+                smtpClient.Port = _smptOptions.Port.Value;
+
+            smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+
+            if (_smptOptions.DefaultCredentials != null)
+                smtpClient.UseDefaultCredentials = _smptOptions.DefaultCredentials.Value;
+
+            if (_smptOptions.UserName != null)
+                smtpClient.Credentials = new NetworkCredential(_smptOptions.UserName, _smptOptions.Password);
+
+            if (_smptOptions.TargetName != null)
+                smtpClient.TargetName = _smptOptions.TargetName;
+
+            return smtpClient;
         }
     }
 }
