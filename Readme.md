@@ -51,8 +51,12 @@ The email body may contain the following special tokens:
 
 ## Troubleshooting
 
-In case of a server error, additional information on the error may be found in the Rhetos server log (`RhetosServer.log` file, by default).
-If needed, more verbose logging of the authentication service may be switched on by adding
+In case of a server error, additional information on the error may be found in the Rhetos app's log file (`RhetosServer.log` for Rhetos v1-v4).
+If needed, more verbose logging of the authentication service may be switched on by enabling `Trace` level loggers
+`AspNetFormsAuth.AuthenticationService` and `SimpleSPRTEmail.EmailSender`.
+
+For example, in Rhetos v1-v4 add
 `<logger name="AspNetFormsAuth.AuthenticationService" minLevel="Trace" writeTo="TraceLog" />`
 and `<logger name="SimpleSPRTEmail.EmailSender" minLevel="Trace" writeTo="TraceLog" />`
-in Rhetos server's `web.config`. The trace log will be written to `RhetosServerTrace.log`.
+in Rhetos application's `web.config`,
+then the trace log will be written to `RhetosServerTrace.log`.
