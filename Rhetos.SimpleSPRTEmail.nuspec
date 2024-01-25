@@ -5,14 +5,16 @@
     <version>5.1.0-dev</version>
     <authors>Omega software</authors>
     <owners>Omega software</owners>
-    <licenseUrl>http://opensource.org/licenses/AGPL-3.0</licenseUrl>
+    <license type="expression">AGPL-3.0-only</license>
     <projectUrl>https://github.com/rhetos/rhetos</projectUrl>
     <description>SimpleSPRTEmail is a plugin package for Rhetos development platform.
         It allows sending simple emails on "Send password reset token" authentication service method at AspNetFormsAuth.</description>
     <copyright>Copyright Omega software 2015</copyright>
     <tags>Rhetos plugin</tags>
     <dependencies>
-      <dependency id="Rhetos.AspNetFormsAuth" version="5.0.0" />
+      <group targetFramework="net5.0">
+        <dependency id="Rhetos.AspNetFormsAuth" version="5.0.0" />
+      </group>
     </dependencies>
   </metadata>
   <files>
