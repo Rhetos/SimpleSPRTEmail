@@ -1,5 +1,9 @@
 # Rhetos.SimpleSPRTEmail release notes
 
+## 6.0.0 (2025-09-08)
+
+* Update to .NET 8 and Rhetos 6.
+
 ## 5.0.0 (2022-03-25)
 
 ### Breaking changes

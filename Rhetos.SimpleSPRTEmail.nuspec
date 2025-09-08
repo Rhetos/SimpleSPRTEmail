@@ -13,8 +13,10 @@
     <copyright>Copyright Omega software 2015</copyright>
     <tags>Rhetos plugin</tags>
     <dependencies>
-      <group targetFramework="net5.0">
-        <dependency id="Rhetos.AspNetFormsAuth" version="5.0.0" />
+      <group targetFramework="net8.0">
+        <dependency id="Rhetos" version="6.0.0" />
+        <dependency id="Rhetos.AspNetFormsAuth" version="6.0.0" />
+        <dependency id="Rhetos.CommonConcepts" version="6.0.0" />
       </group>
     </dependencies>
   </metadata>
@@ -23,7 +25,7 @@
     <file src="ChangeLog.md" target="" />
     <file src="src\DataMigration\**\*" target="DataMigration" />
     <file src="src\DslScripts\**\*" target="DslScripts" />
-    <file src="src\Rhetos.AspNetFormsAuth.SimpleSPRTEmail\bin\Debug\net5.0\Rhetos.AspNetFormsAuth.SimpleSPRTEmail.dll" target="lib\net5.0" />
-    <file src="src\Rhetos.AspNetFormsAuth.SimpleSPRTEmail\bin\Debug\net5.0\Rhetos.AspNetFormsAuth.SimpleSPRTEmail.pdb" target="lib\net5.0" />
+    <file src="src\Rhetos.AspNetFormsAuth.SimpleSPRTEmail\bin\Debug\net8.0\Rhetos.AspNetFormsAuth.SimpleSPRTEmail.dll" target="lib\net8.0" />
+    <file src="src\Rhetos.AspNetFormsAuth.SimpleSPRTEmail\bin\Debug\net8.0\Rhetos.AspNetFormsAuth.SimpleSPRTEmail.pdb" target="lib\net8.0" />
   </files>
 </package>
