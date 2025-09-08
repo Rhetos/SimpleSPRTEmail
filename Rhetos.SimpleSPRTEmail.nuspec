@@ -9,6 +9,7 @@
     <projectUrl>https://github.com/rhetos/rhetos</projectUrl>
     <description>SimpleSPRTEmail is a plugin package for Rhetos development platform.
         It allows sending simple emails on "Send password reset token" authentication service method at AspNetFormsAuth.</description>
+    <readme>docs\Readme.md</readme>
     <copyright>Copyright Omega software 2015</copyright>
     <tags>Rhetos plugin</tags>
     <dependencies>
@@ -18,7 +19,7 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="Readme.md" target="" />
+    <file src="Readme.md" target="docs" />
     <file src="ChangeLog.md" target="" />
     <file src="src\DataMigration\**\*" target="DataMigration" />
     <file src="src\DslScripts\**\*" target="DslScripts" />
